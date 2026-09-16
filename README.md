@@ -1,21 +1,10 @@
 # Creative Run Review
 
-A dependency-free browser demo for comparing fictional AI image attempts and recording a review. The included brief, images, model labels, values, and reviews are synthetic examples.
+## Abstract
 
-## Run locally
+Creative Run Review is a browser-based demo that explores how HexCoded’s creative team might review several generated visual options for one client brief and preserve the reasoning behind revisions and a final choice. It uses a fictional brief and synthetic images to make that question concrete.
 
-```sh
-python3 -m http.server 4173
-```
+For each attempt, the app keeps browser file checks separate from the reviewer’s judgment. It records whether the image fits the brief, notes visual concerns, tracks revision relationships and run details, then brings the comparison together for a final decision. The written review can be exported without the image files. This is a fictional local prototype for exploring the idea; it does not represent or validate HexCoded’s current workflow.
 
-Open <http://localhost:4173/>. The app keeps files and entries in browser memory; nothing is uploaded or saved. Export your review before leaving.
-
-Run the logic check with:
-
-```sh
-node self-check.mjs
-```
-
-## Publish with GitHub Pages
-
-In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save. GitHub Pages will serve the root `index.html`.
+- **Prototype:** [Creative Run Review](https://anantjamuar.me/creative-run-review/)
+- **GitHub:** [Repository](https://github.com/ActiveAngrily/creative-run-review)
