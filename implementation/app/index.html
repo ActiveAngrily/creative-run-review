@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A demo project for comparing fictional AI image attempts in your browser.">
+  <title>Creative Run Review | Demo project</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <a class="skip-link" href="#attempts">Skip to attempts</a>
+  <header class="hero" id="top">
+    <nav class="shell" aria-label="Page context">
+      <a class="wordmark" href="#top" aria-label="Creative Run Review home">CR/R<span>Creative Run Review</span></a>
+      <p><span class="privacy-dot" aria-hidden="true"></span>Local session · files are not uploaded</p>
+    </nav>
+    <div class="hero-grid shell">
+      <div>
+        <p class="eyebrow">Creative tools</p>
+        <h1>Creative Run <span>Review</span></h1>
+        <p class="hero-purpose">Compare several AI-generated image attempts for one creative brief and record why one was selected.</p>
+        <p class="hero-description">Automatic file checks, your review, run details, and a final decision. All in one browser session.</p>
+        <a class="button primary" href="#attempts">Review the attempts <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="session-note" aria-label="About this demo">
+        <p class="label">A fictional brief. A real review process.</p>
+        <p>The included brief, images, model labels, values, and reviews are <strong>Synthetic</strong>: fictional examples made for this demo.</p>
+        <p>Files and entries stay in browser memory. Nothing is uploaded or saved by the app. Export your review before leaving.</p>
+      </aside>
+    </div>
+    <ol class="workflow shell" aria-label="Review workflow">
+      <li><span>01</span><strong>Review</strong><small>Check the brief and images</small></li>
+      <li><span>02</span><strong>Compare</strong><small>Keep facts and opinions separate</small></li>
+      <li><span>03</span><strong>Decide</strong><small>Choose an outcome and explain why</small></li>
+      <li><span>04</span><strong>Export</strong><small>Take the written review with you</small></li>
+    </ol>
+  </header>
+
+  <main>
+    <section class="overview shell" id="overview" aria-labelledby="overview-title">
+      <div class="section-kicker"><span>01</span><p>How the review works</p></div>
+      <h2 id="overview-title">Four parts. One clear record.</h2>
+      <p class="section-intro">Keep track of what met the brief, what needs work, and why you made your choice.</p>
+      <div class="info-types" aria-label="The four parts of a review">
+        <div><p class="label">Automatic</p><h3>File checks</h3><p>The browser checks readability, type, dimensions, shape, and size. It checks the file, not the artwork.</p></div>
+        <div><p class="label">You enter</p><h3>Your review</h3><p>Rate brief fit, visual craft, text clarity, and coherence. Add a note. Ratings never become a combined score.</p></div>
+        <div><p class="label">You enter</p><h3>Run details</h3><p>Record retries, credits, and time with their sources. Blank means Unknown; zero means a known zero.</p></div>
+        <div><p class="label">You confirm</p><h3>Source and ownership</h3><p>Record the source and permission to inspect. The app cannot verify ownership, consent, licences, or legal clearance.</p></div>
+      </div>
+    </section>
+
+    <section class="brief shell" aria-labelledby="brief-title">
+      <div class="section-kicker">
+        <span>02</span>
+        <p>Creative brief</p>
+      </div>
+      <div class="brief-grid">
+        <div>
+          <p class="label">Fictional brief: BR-SYN-001</p>
+          <h2 id="brief-title">Orbit Spring launch tile</h2>
+          <p class="lede">Create a square launch image for an invented moving desk sculpture. It does not show a real brand, person, customer, or product claim.</p>
+          <div class="headline-requirement"><p class="label">Required headline</p><blockquote>“MAKE ROOM FOR WONDER”</blockquote></div>
+          <ul class="requirements">
+            <li><strong>Color direction</strong><span class="palette" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Electric violet, warm coral, ivory, and near-black</li>
+            <li><strong>Restrictions</strong>No real people or third-party brand marks</li>
+            <li><strong>Review scope</strong>One comparison only; not a general model ranking</li>
+          </ul>
+        </div>
+        <aside class="constraint-card" aria-label="Automatic file-check rules">
+          <p class="label">File-check rules</p>
+          <dl>
+            <div><dt>Format</dt><dd>JPEG or PNG</dd></div>
+            <div><dt>Image size</dt><dd>1080 × 1080 px</dd></div>
+            <div><dt>Ratio</dt><dd>1:1 <small>± 0.01</small></dd></div>
+            <div><dt>File-size limit</dt><dd>≤ 5 MiB <small>(mebibytes)</small></dd></div>
+            <div><dt>Browser loading limit</dt><dd>10 MiB <small>(mebibytes)</small></dd></div>
+          </dl>
+          <p class="fine-print"><strong>Unknown rule:</strong> A check stays Unknown when the file or a needed value is missing, unreadable, unsupported, too large to open, zero, NaN (not a number), or Infinity. It never becomes Pass.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="attempts-section shell" id="attempts" aria-labelledby="attempts-title">
+      <div class="section-heading">
+        <div class="section-kicker"><span>03</span><p>Image attempts</p></div>
+        <div>
+          <h2 id="attempts-title">Review the image attempts.</h2>
+          <p>Start with three fictional examples, or replace them with local JPEG or PNG files you may inspect. Review up to five attempts. File checks and your judgment stay separate.</p>
+        </div>
+        <button class="button secondary" id="add-attempt" type="button">＋ Add attempt</button>
+      </div>
+      <div class="status-guide">
+        <p><strong class="status status-pass">✓ Pass</strong> The browser found enough information and the file met the rule.</p>
+        <p><strong class="status status-fail">! Fail</strong> The browser found enough information and the file did not meet the rule.</p>
+        <p><strong class="status status-unknown">? Unknown</strong> The browser could not safely work out the result. Unknown never means Pass.</p>
+        <p><strong class="status status-na">○ Not applicable</strong> The check does not apply in this situation.</p>
+      </div>
+      <div class="attempt-grid" id="attempt-grid"></div>
+    </section>
+
+    <section class="comparison shell" aria-labelledby="comparison-title">
+      <div class="section-kicker"><span>04</span><p>Comparison</p></div>
+      <h2 id="comparison-title">Bring the results together.</h2>
+      <p class="section-intro">Compare the file results and your brief-fit ratings. Return to the review notes and run details for the full context. A Pass does not cancel a concern or an Unknown.</p>
+      <div class="summary-grid" id="summary-grid" aria-label="Attempt status summary"></div>
+    </section>
+
+    <section class="decision shell" aria-labelledby="decision-title">
+      <div class="section-kicker"><span>05</span><p>Final decision</p></div>
+      <div class="decision-grid">
+        <div>
+          <h2 id="decision-title">Choose what to do with these attempts.</h2>
+          <p class="lede">You make the final choice. An automatic Pass does not remove a concern from your review or an Unknown.</p>
+          <ul class="decision-help">
+            <li><strong>Selected for this comparison:</strong> Choose one image for this review.</li>
+            <li><strong>Rejected set:</strong> Choose none of the current images.</li>
+            <li><strong>Hold / no decision:</strong> Wait for more information or another review.</li>
+          </ul>
+          <p class="fine-print">Selecting an image does not approve it for publication, clear its legal rights, or prove that its model is better than another model.</p>
+
+        </div>
+        <form class="decision-form" id="decision-form" novalidate>
+          <p class="form-note">Your choice stays in this session. Export below to keep a copy.</p>
+          <label for="outcome">Decision</label>
+          <select id="outcome" name="outcome">
+            <option>Selected for this comparison</option>
+            <option>Rejected set</option>
+            <option selected>Hold / no decision</option>
+          </select>
+          <div id="selected-wrap">
+            <label for="selected-attempt">Selected attempt</label>
+            <select id="selected-attempt" name="selectedAttemptId" aria-describedby="decision-error"></select>
+          </div>
+          <label for="rationale">Decision rationale <span class="required">Required</span></label>
+          <textarea id="rationale" name="rationale" rows="4" required aria-describedby="rationale-help decision-error"></textarea>
+          <p class="help" id="rationale-help">Explain automatic checks, your review, and important Unknowns separately.</p>
+          <label for="next-action">Next action <span class="help">Optional</span></label>
+          <input id="next-action" name="nextAction">
+          <p class="field-error" id="decision-error" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="export shell" aria-labelledby="export-title">
+      <div>
+        <div class="section-kicker inverse"><span>06</span><p>Export and clear</p></div>
+        <h2 id="export-title">Export review details only.</h2>
+        <p>Exports contain the written review: checks, Unknowns, sources, limits, your comments, run details, and the decision. They do not contain image data, temporary browser links, local file paths, file handles, decoded pixels, or hidden app data.</p>
+      </div>
+      <div class="export-actions" aria-label="Export formats">
+        <button class="button light export-button" data-format="json" type="button">Export JSON <span aria-hidden="true">↗</span></button>
+        <button class="button light export-button" data-format="csv" type="button">Export CSV <span aria-hidden="true">↗</span></button>
+        <button class="button light export-button" data-format="md" type="button">Export Markdown <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="clear-review"><button class="button danger" id="clear-session" type="button">Clear this review</button>
+      <p class="export-note">Clearing removes the current review from this page and releases temporary image previews. You cannot undo it inside the app. It does not delete exports you already downloaded or prove that all browser memory was erased.</p></div>
+    </section>
+
+    <section class="boundary shell" aria-labelledby="boundary-title">
+      <p class="label">Demo limitations</p>
+      <h2 id="boundary-title">What this demo can and cannot show.</h2>
+      <div class="boundary-grid">
+        <p>Everything included in this demo is fictional. The app shows how one local review can keep file checks, personal judgments, run details, source information, and a final decision separate. It was not tested with real HexCoded users, so it does not prove that the company needs or would use it.</p>
+        <p>It does not prove image quality, factual accuracy, model performance, copyright, consent, ownership, legal clearance, approval, or permission to publish.</p>
+      </div>
+      <details class="limits-details">
+        <summary>More limits and test coverage</summary>
+        <ul>
+          <li>This is a fictional local demo, not an official HexCoded product or a production system.</li>
+          <li>It uses no live HexCoded service, account, API, workflow, customer file, or company data.</li>
+          <li>It was not tested with real users and does not prove demand, business value, time savings, cost savings, adoption, or that it is better than a spreadsheet.</li>
+          <li>It does not certify accessibility, security, privacy, copyright, consent, legal compliance, or production readiness.</li>
+          <li>The supported demo environment is a current desktop Chromium browser on localhost. The supported minimum width is 768 CSS pixels. Other browsers, smaller screens, and full assistive-technology use remain unverified.</li>
+          <li>Downloaded exports remain under your control. The app cannot delete them.</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>Creative Run Review · Synthetic demo</p>
+    <p>Fictional inputs · local file checks · your decision</p>
+  </footer>
+  <p class="sr-only" id="live-region" aria-live="polite" aria-atomic="true"></p>
+  <script type="module" src="app.mjs?v=6"></script>
+</body>
+</html>
